@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Login - Patient Care</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css">
+
+    <style>
+
+        /* ==========================================
+           LOGIN PAGE
+           ========================================== */
+
+        .auth-page {
+
+            min-height: calc(100vh - 70px);
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            padding: 40px 20px;
+
+            box-sizing: border-box;
+
+        }
+
+
+        /* ==========================================
+           LOGIN CARD
+           ========================================== */
+
+        .auth-card {
+
+            width: 100%;
+
+            max-width: 440px;
+
+            background: #ffffff;
+
+            border-radius: 20px;
+
+            padding: 40px;
+
+            box-shadow:
+                0 12px 35px rgba(0, 0, 0, 0.12);
+
+            text-align: center;
+
+            box-sizing: border-box;
+
+        }
+
+
+        /* ==========================================
+           ICON
+           ========================================== */
+
+        .auth-icon {
+
+            width: 78px;
+
+            height: 78px;
+
+            margin: 0 auto 20px;
+
+            border-radius: 50%;
+
+            background: #e8f5e9;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            font-size: 40px;
+
+        }
+
+
+        /* ==========================================
+           TITLE
+           ========================================== */
+
+        .auth-card h1 {
+
+            margin: 0;
+
+            color: #1b5e20;
+
+            font-size: 30px;
+
+            font-weight: 700;
+
+        }
+
+
+        /* ==========================================
+           SUBTITLE
+           ========================================== */
+
+        .auth-subtitle {
+
+            margin: 10px 0 30px;
+
+            color: #666666;
+
+            font-size: 15px;
+
+            line-height: 1.5;
+
+        }
+
+
+        /* ==========================================
+           FORM
+           ========================================== */
+
+        .auth-form {
+
+            text-align: left;
+
+        }
+
+
+        /* ==========================================
+           FORM GROUP
+           ========================================== */
+
+        .auth-form .form-group {
+
+            margin-bottom: 20px;
+
+        }
+
+
+        /* ==========================================
+           LABEL
+           ========================================== */
+
+        .auth-form label {
+
+            display: block;
+
+            margin-bottom: 8px;
+
+            font-weight: 600;
+
+            color: #333333;
+
+            font-size: 14px;
+
+        }
+
+
+        /* ==========================================
+           INPUT
+           ========================================== */
+
+        .auth-form input {
+
+            width: 100%;
+
+            padding: 13px 14px;
+
+            border:
+                1px solid #d0d7d2;
+
+            border-radius: 10px;
+
+            font-size: 15px;
+
+            box-sizing: border-box;
+
+            outline: none;
+
+            transition: 0.2s;
+
+            background: #ffffff;
+
+        }
+
+
+        .auth-form input:focus {
+
+            border-color: #2e7d32;
+
+            box-shadow:
+                0 0 0 3px
+                rgba(46, 125, 50, 0.12);
+
+        }
+
+
+        /* ==========================================
+           LOGIN BUTTON
+           ========================================== */
+
+        .auth-button {
+
+            width: 100%;
+
+            border: none;
+
+            padding: 14px;
+
+            border-radius: 10px;
+
+            background: #2e7d32;
+
+            color: #ffffff;
+
+            font-size: 16px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+
+        }
+
+
+        .auth-button:hover {
+
+            background: #1b5e20;
+
+            transform: translateY(-1px);
+
+        }
+
+
+        .auth-button:active {
+
+            transform: translateY(0);
+
+        }
+
+
+        /* ==========================================
+           LOGIN MESSAGE
+           ========================================== */
+
+        .auth-message {
+
+            min-height: 24px;
+
+            margin: 18px 0 0;
+
+            text-align: center;
+
+            font-size: 14px;
+
+            font-weight: 500;
+
+            line-height: 1.5;
+
+        }
+
+
+        /* ==========================================
+           REGISTER SECTION
+           ========================================== */
+
+        .auth-footer {
+
+            margin-top: 25px;
+
+            padding-top: 20px;
+
+            border-top:
+                1px solid #eeeeee;
+
+            color: #666666;
+
+            font-size: 14px;
+
+        }
+
+
+        .auth-footer a {
+
+            color: #2e7d32;
+
+            font-weight: 600;
+
+            text-decoration: none;
+
+        }
+
+
+        .auth-footer a:hover {
+
+            text-decoration: underline;
+
+        }
+
+
+        /* ==========================================
+           BACK TO HOME
+           ========================================== */
+
+        .back-home {
+
+            display: inline-block;
+
+            margin-top: 18px;
+
+            color: #555555;
+
+            text-decoration: none;
+
+            font-size: 14px;
+
+        }
+
+
+        .back-home:hover {
+
+            color: #2e7d32;
+
+        }
+
+
+        /* ==========================================
+           LOADING STATE
+           ========================================== */
+
+        .auth-button.loading {
+
+            opacity: 0.7;
+
+            cursor: not-allowed;
+
+        }
+
+
+        /* ==========================================
+           MOBILE RESPONSIVE
+           ========================================== */
+
+        @media (max-width: 600px) {
+
+            .auth-page {
+
+                padding:
+                    25px 15px;
+
+            }
+
+
+            .auth-card {
+
+                padding:
+                    30px 22px;
+
+                border-radius: 16px;
+
+            }
+
+
+            .auth-card h1 {
+
+                font-size: 26px;
+
+            }
+
+
+            .auth-icon {
+
+                width: 68px;
+
+                height: 68px;
+
+                font-size: 34px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ==========================================
+         NAVIGATION BAR
+         ========================================== -->
+
+    <nav class="navbar">
+
+        <div class="nav-container">
+
+
+            <!-- Logo -->
+
+            <a
+                href="/index.html"
+                class="logo">
+
+                🏥 Patient Care
+
+            </a>
+
+
+            <!-- Navigation Links -->
+
+            <div class="nav-links">
+
+
+                <a href="/index.html">
+
+                    Home
+
+                </a>
+
+
+                <a href="/add-patient.html">
+
+                    Add Patient
+
+                </a>
+
+
+                <a href="/patients.html">
+
+                    View Patients
+
+                </a>
+
+
+                <a href="/add-doctor.html">
+
+                    Add Doctor
+
+                </a>
+
+
+                <a href="/doctors.html">
+
+                    View Doctors
+
+                </a>
+
+
+                <a
+                    href="/login.html"
+                    class="active">
+
+                    Login
+
+                </a>
+
+
+                <a href="/register.html">
+
+                    Register
+
+                </a>
+
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ==========================================
+         LOGIN SECTION
+         ========================================== -->
+
+    <main class="auth-page">
+
+        <div class="auth-card">
+
+
+            <!-- Hospital Icon -->
+
+            <div class="auth-icon">
+
+                🏥
+
+            </div>
+
+
+            <!-- Heading -->
+
+            <h1>
+
+                Welcome Back
+
+            </h1>
+
+
+            <!-- Description -->
+
+            <p class="auth-subtitle">
+
+                Sign in to access your Patient Care account
+
+            </p>
+
+
+            <!-- ==================================
+                 LOGIN FORM
+                 ================================== -->
+
+            <form
+                class="auth-form"
+                id="loginForm">
+
+
+                <!-- Username -->
+
+                <div class="form-group">
+
+                    <label for="username">
+
+                        Username
+
+                    </label>
+
+
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Enter your username"
+                        autocomplete="username"
+                        required>
+
+                </div>
+
+
+                <!-- Password -->
+
+                <div class="form-group">
+
+                    <label for="password">
+
+                        Password
+
+                    </label>
+
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Enter your password"
+                        autocomplete="current-password"
+                        required>
+
+                </div>
+
+
+                <!-- Sign In Button -->
+
+                <button
+                    type="submit"
+                    class="auth-button"
+                    id="loginButton">
+
+                    Sign In
+
+                </button>
+
+            </form>
+
+
+            <!-- Login Message -->
+
+            <p
+                id="loginMessage"
+                class="auth-message">
+
+            </p>
+
+
+            <!-- Register -->
+
+            <div class="auth-footer">
+
+                Don't have an account?
+
+                <a href="/register.html">
+
+                    Create an account
+
+                </a>
+
+            </div>
+
+
+            <!-- Back Home -->
+
+            <a
+                href="/index.html"
+                class="back-home">
+
+                ← Back to Home
+
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- ==========================================
+         LOGIN JAVASCRIPT
+         ========================================== -->
+
+    <script>
+
+        const loginForm =
+            document.getElementById("loginForm");
+
+        const loginMessage =
+            document.getElementById("loginMessage");
+
+        const loginButton =
+            document.getElementById("loginButton");
+
+
+        /* ==========================================
+           LOGIN SUBMIT
+           ========================================== */
+
+        loginForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                /* Get username */
+
+                const username =
+                    document
+                        .getElementById("username")
+                        .value
+                        .trim();
+
+
+                /* Get password */
+
+                const password =
+                    document
+                        .getElementById("password")
+                        .value;
+
+
+                /* Clear old message */
+
+                loginMessage.innerText = "";
+
+
+                /* ==================================
+                   VALIDATE USERNAME
+                   ================================== */
+
+                if (username === "") {
+
+                    loginMessage.innerText =
+                        "Please enter your username.";
+
+                    loginMessage.style.color =
+                        "#d32f2f";
+
+                    return;
+
+                }
+
+
+                /* ==================================
+                   VALIDATE PASSWORD
+                   ================================== */
+
+                if (password === "") {
+
+                    loginMessage.innerText =
+                        "Please enter your password.";
+
+                    loginMessage.style.color =
+                        "#d32f2f";
+
+                    return;
+
+                }
+
+
+                /* ==================================
+                   LOGIN SUCCESS
+                   ================================== */
+
+                loginMessage.innerText =
+                    "Login successful! Redirecting to dashboard...";
+
+                loginMessage.style.color =
+                    "#2e7d32";
+
+
+                /* Disable button */
+
+                loginButton.disabled = true;
+
+                loginButton.classList.add("loading");
+
+                loginButton.innerText =
+                    "Signing In...";
+
+
+                /* ==================================
+                   REDIRECT TO MAIN DASHBOARD
+                   ================================== */
+
+                setTimeout(
+                    function () {
+
+                        window.location.href =
+                            "/index.html";
+
+                    },
+                    1000
+                );
+
+            }
+        );
+
+    </script>
+
+
+</body>
+
+</html>

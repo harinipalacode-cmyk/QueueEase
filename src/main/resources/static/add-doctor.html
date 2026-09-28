@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Add Doctor - Patient Care</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css">
+
+</head>
+
+<body>
+
+
+    <!-- ==================================================
+         NAVIGATION BAR
+         ================================================== -->
+<nav class="navbar">
+
+    <div class="nav-container">
+
+        <a
+            href="/index.html"
+            class="logo">
+
+            🏥 Patient Care
+
+        </a>
+
+        <div class="nav-links">
+
+            <a href="/index.html">
+                Home
+            </a>
+
+            <a href="/add-patient.html">
+                Add Patient
+            </a>
+
+            <a href="/patients.html">
+                View Patients
+            </a>
+
+            <a
+                href="/add-doctor.html"
+                class="active">
+
+                Add Doctor
+
+            </a>
+
+            <a href="/doctors.html">
+                View Doctors
+            </a>
+
+            <a href="/login.html">
+                Login
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+    <!-- ==================================================
+         ADD DOCTOR
+         ================================================== -->
+
+    <main class="page-container">
+
+        <div class="form-card">
+
+            <div class="icon">
+
+                👨‍⚕️
+
+            </div>
+
+
+            <h1>
+
+                Add Doctor
+
+            </h1>
+
+
+            <p class="subtitle">
+
+                Add a doctor and their associated patient
+
+            </p>
+
+
+            <form id="doctorForm">
+
+
+                <!-- Doctor Name -->
+
+                <div class="form-group">
+
+                    <label for="dtname">
+
+                        Doctor Name
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="dtname"
+                        name="dtname"
+                        placeholder="Enter doctor name"
+                        required>
+
+                </div>
+
+
+                <!-- Patient Name -->
+
+                <div class="form-group">
+
+                    <label for="ptname">
+
+                        Patient Name
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="ptname"
+                        name="ptname"
+                        placeholder="Enter patient name"
+                        required>
+
+                </div>
+
+
+                <!-- Patient Age -->
+
+                <div class="form-group">
+
+                    <label for="ptage">
+
+                        Patient Age
+
+                    </label>
+
+                    <input
+                        type="number"
+                        id="ptage"
+                        name="ptage"
+                        placeholder="Enter patient age"
+                        min="1"
+                        max="120"
+                        required>
+
+                </div>
+
+
+                <!-- Buttons -->
+
+                <div class="form-actions">
+
+                    <button
+                        type="submit"
+                        class="button primary-button">
+
+                        Add Doctor
+
+                    </button>
+
+
+                    <a
+                        href="/doctors.html"
+                        class="button secondary-button">
+
+                        View Doctors
+
+                    </a>
+
+                </div>
+
+
+                <p
+                    id="doctorMessage"
+                    class="form-message">
+
+                </p>
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+    <script src="/js/script.js"></script>
+
+</body>
+
+</html>

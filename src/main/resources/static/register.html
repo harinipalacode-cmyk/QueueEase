@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Register - Patient Care</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css">
+
+    <style>
+
+        /* ==============================
+           REGISTER PAGE
+           ============================== */
+
+        .auth-page {
+            min-height: calc(100vh - 70px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .auth-card {
+            width: 100%;
+            max-width: 460px;
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+            text-align: center;
+        }
+
+        .auth-icon {
+            width: 75px;
+            height: 75px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: #e8f5e9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 38px;
+        }
+
+        .auth-card h1 {
+            margin: 0;
+            color: #1b5e20;
+            font-size: 30px;
+        }
+
+        .auth-subtitle {
+            margin: 10px 0 30px;
+            color: #666;
+            font-size: 15px;
+        }
+
+        .auth-form {
+            text-align: left;
+        }
+
+        .auth-form .form-group {
+            margin-bottom: 18px;
+        }
+
+        .auth-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .auth-form input {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid #d0d7d2;
+            border-radius: 10px;
+            font-size: 15px;
+            box-sizing: border-box;
+            outline: none;
+            transition: 0.2s;
+        }
+
+        .auth-form input:focus {
+            border-color: #2e7d32;
+            box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.12);
+        }
+
+        .auth-button {
+            width: 100%;
+            border: none;
+            padding: 14px;
+            border-radius: 10px;
+            background: #2e7d32;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-top: 5px;
+        }
+
+        .auth-button:hover {
+            background: #1b5e20;
+            transform: translateY(-1px);
+        }
+
+        .auth-message {
+            min-height: 24px;
+            margin: 18px 0 0;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .auth-footer {
+            margin-top: 25px;
+            padding-top: 20px;
+            border-top: 1px solid #eeeeee;
+            color: #666;
+            font-size: 14px;
+        }
+
+        .auth-footer a {
+            color: #2e7d32;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .auth-footer a:hover {
+            text-decoration: underline;
+        }
+
+        .back-home {
+            display: inline-block;
+            margin-top: 18px;
+            color: #555;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .back-home:hover {
+            color: #2e7d32;
+        }
+
+        @media (max-width: 600px) {
+
+            .auth-page {
+                padding: 25px 15px;
+            }
+
+            .auth-card {
+                padding: 30px 22px;
+            }
+
+            .auth-card h1 {
+                font-size: 26px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- ==========================================
+         NAVIGATION BAR
+         ========================================== -->
+
+    <nav class="navbar">
+
+        <div class="nav-container">
+
+            <a
+                href="/index.html"
+                class="logo">
+
+                🏥 Patient Care
+
+            </a>
+
+
+            <div class="nav-links">
+
+                <a href="/index.html">
+                    Home
+                </a>
+
+                <a href="/add-patient.html">
+                    Add Patient
+                </a>
+
+                <a href="/patients.html">
+                    View Patients
+                </a>
+
+                <a href="/add-doctor.html">
+                    Add Doctor
+                </a>
+
+                <a href="/doctors.html">
+                    View Doctors
+                </a>
+
+                <a href="/login.html">
+                    Login
+                </a>
+
+                <a
+                    href="/register.html"
+                    class="active">
+
+                    Register
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ==========================================
+         REGISTER SECTION
+         ========================================== -->
+
+    <main class="auth-page">
+
+        <div class="auth-card">
+
+
+            <!-- Icon -->
+
+            <div class="auth-icon">
+
+                👤
+
+            </div>
+
+
+            <!-- Heading -->
+
+            <h1>
+                Create Account
+            </h1>
+
+            <p class="auth-subtitle">
+
+                Register to access the Patient Care system
+
+            </p>
+
+
+            <!-- Register Form -->
+
+            <form
+                class="auth-form"
+                id="registerForm">
+
+
+                <!-- Full Name -->
+
+                <div class="form-group">
+
+                    <label for="fullName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="fullName"
+                        name="fullName"
+                        placeholder="Enter your full name"
+                        required>
+
+                </div>
+
+
+                <!-- Username -->
+
+                <div class="form-group">
+
+                    <label for="username">
+                        Username
+                    </label>
+
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Choose a username"
+                        required>
+
+                </div>
+
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        autocomplete="email"
+                        required>
+
+                </div>
+
+
+                <!-- Password -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="password"
+                        name="password"
+                        placeholder="Create a password"
+                        autocomplete="new-password"
+                        required>
+
+                </div>
+
+
+                <!-- Confirm Password -->
+
+                <div class="form-group">
+
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="confirmPassword"
+                        name="confirmPassword"
+                        placeholder="Confirm your password"
+                        autocomplete="new-password"
+                        required>
+
+                </div>
+
+
+                <!-- Register Button -->
+
+                <button
+                    type="submit"
+                    class="auth-button">
+
+                    Create Account
+
+                </button>
+
+            </form>
+
+
+            <!-- Message -->
+
+            <p
+                id="registerMessage"
+                class="auth-message">
+
+            </p>
+
+
+            <!-- Login Link -->
+
+            <div class="auth-footer">
+
+                Already have an account?
+
+                <a href="/login.html">
+
+                    Sign in
+
+                </a>
+
+            </div>
+
+
+            <!-- Home -->
+
+            <a
+                href="/index.html"
+                class="back-home">
+
+                ← Back to Home
+
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- ==========================================
+         REGISTER JAVASCRIPT
+         ========================================== -->
+
+    <script>
+
+        const registerForm =
+            document.getElementById("registerForm");
+
+        const registerMessage =
+            document.getElementById("registerMessage");
+
+
+        registerForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                const fullName =
+                    document
+                        .getElementById("fullName")
+                        .value
+                        .trim();
+
+
+                const username =
+                    document
+                        .getElementById("username")
+                        .value
+                        .trim();
+
+
+                const email =
+                    document
+                        .getElementById("email")
+                        .value
+                        .trim();
+
+
+                const password =
+                    document
+                        .getElementById("password")
+                        .value;
+
+
+                const confirmPassword =
+                    document
+                        .getElementById("confirmPassword")
+                        .value;
+
+
+                registerMessage.innerText = "";
+
+
+                if (fullName === "") {
+
+                    registerMessage.innerText =
+                        "Please enter your full name.";
+
+                    registerMessage.style.color =
+                        "#d32f2f";
+
+                    return;
+
+                }
+
+
+                if (username === "") {
+
+                    registerMessage.innerText =
+                        "Please enter a username.";
+
+                    registerMessage.style.color =
+                        "#d32f2f";
+
+                    return;
+
+                }
+
+
+                if (email === "") {
+
+                    registerMessage.innerText =
+                        "Please enter your email address.";
+
+                    registerMessage.style.color =
+                        "#d32f2f";
+
+                    return;
+
+                }
+
+
+                if (password.length < 6) {
+
+                    registerMessage.innerText =
+                        "Password must contain at least 6 characters.";
+
+                    registerMessage.style.color =
+                        "#d32f2f";
+
+                    return;
+
+                }
+
+
+                if (password !== confirmPassword) {
+
+                    registerMessage.innerText =
+                        "Passwords do not match.";
+
+                    registerMessage.style.color =
+                        "#d32f2f";
+
+                    return;
+
+                }
+
+
+                registerMessage.innerText =
+                    "Account created successfully! Backend registration will be connected later.";
+
+                registerMessage.style.color =
+                    "#2e7d32";
+
+
+                registerForm.reset();
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

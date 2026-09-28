@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Add Patient - Patient Care</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css">
+
+</head>
+
+<body>
+
+
+    <!-- ==================================================
+         NAVIGATION BAR
+         ================================================== -->
+<nav class="navbar">
+
+    <div class="nav-container">
+
+        <a
+            href="/index.html"
+            class="logo">
+
+            🏥 Patient Care
+
+        </a>
+
+        <div class="nav-links">
+
+            <a
+                href="/index.html">
+
+                Home
+
+            </a>
+
+            <a
+                href="/add-patient.html"
+                class="active">
+
+                Add Patient
+
+            </a>
+
+            <a
+                href="/patients.html">
+
+                View Patients
+
+            </a>
+
+            <a
+                href="/add-doctor.html">
+
+                Add Doctor
+
+            </a>
+
+            <a
+                href="/doctors.html">
+
+                View Doctors
+
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+    <!-- ==================================================
+         ADD PATIENT
+         ================================================== -->
+
+    <main class="page-container">
+
+        <div class="form-card">
+
+            <div class="icon">
+
+                👤
+
+            </div>
+
+
+            <h1>
+
+                Add Patient
+
+            </h1>
+
+
+            <p class="subtitle">
+
+                Enter the patient's information
+
+            </p>
+
+
+            <form id="patientForm">
+
+
+                <!-- Patient Name -->
+
+                <div class="form-group">
+
+                    <label for="name">
+
+                        Patient Name
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter patient name"
+                        required>
+
+                </div>
+
+
+                <!-- Phone -->
+
+                <div class="form-group">
+
+                    <label for="phone">
+
+                        Phone Number
+
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="Enter 10-digit phone number"
+                        maxlength="10"
+                        required>
+
+                </div>
+
+
+                <!-- Age -->
+
+                <div class="form-group">
+
+                    <label for="age">
+
+                        Age
+
+                    </label>
+
+                    <input
+                        type="number"
+                        id="age"
+                        name="age"
+                        placeholder="Enter age"
+                        min="1"
+                        max="120"
+                        required>
+
+                </div>
+
+
+                <!-- Problem -->
+
+                <div class="form-group">
+
+                    <label for="problem">
+
+                        Health Problem
+
+                    </label>
+
+                    <textarea
+                        id="problem"
+                        name="problem"
+                        rows="4"
+                        placeholder="Enter patient's health problem"
+                        required></textarea>
+
+                </div>
+
+
+                <!-- Doctor -->
+
+                <div class="form-group">
+
+                    <label for="Dname">
+
+                        Doctor Name
+
+                    </label>
+
+                    <input
+                        type="text"
+                        id="Dname"
+                        name="Dname"
+                        placeholder="Enter doctor name"
+                        required>
+
+                </div>
+
+
+                <!-- Buttons -->
+
+                <div class="form-actions">
+
+                    <button
+                        type="submit"
+                        class="button primary-button">
+
+                        Add Patient
+
+                    </button>
+
+
+                    <a
+                        href="/patients.html"
+                        class="button secondary-button">
+
+                        View Patients
+
+                    </a>
+
+                </div>
+
+
+                <p
+                    id="patientMessage"
+                    class="form-message">
+
+                </p>
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+    <script src="/js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>View Patients - Patient Care</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css">
+
+</head>
+
+<body>
+
+
+    <!-- ==================================================
+         NAVIGATION BAR
+         ================================================== -->
+<nav class="navbar">
+
+    <div class="nav-container">
+
+        <a
+            href="/index.html"
+            class="logo">
+
+            🏥 Patient Care
+
+        </a>
+
+        <div class="nav-links">
+
+            <a href="/index.html">
+                Home
+            </a>
+
+            <a href="/add-patient.html">
+                Add Patient
+            </a>
+
+            <a
+                href="/patients.html"
+                class="active">
+
+                View Patients
+
+            </a>
+
+            <a href="/add-doctor.html">
+                Add Doctor
+            </a>
+
+            <a href="/doctors.html">
+                View Doctors
+            </a>
+
+            <a href="/login.html">
+                Login
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+    <!-- ==================================================
+         PATIENT RECORDS
+         ================================================== -->
+
+    <main class="page-container">
+
+        <div class="page-header">
+
+            <div>
+
+                <h1>
+
+                    Patient Records
+
+                </h1>
+
+                <p>
+
+                    View and manage registered patients
+
+                </p>
+
+            </div>
+
+
+            <a
+                href="/add-patient.html"
+                class="button primary-button">
+
+                + Add Patient
+
+            </a>
+
+        </div>
+
+
+        <p
+            id="patientMessage"
+            class="form-message">
+
+        </p>
+
+
+        <!-- Patient Table -->
+
+        <div class="table-card">
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+
+                            <th>Name</th>
+
+                            <th>Phone</th>
+
+                            <th>Age</th>
+
+                            <th>Problem</th>
+
+                            <th>Doctor</th>
+
+                            <th>Actions</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="patientTableBody">
+
+                        <tr>
+
+                            <td
+                                colspan="7"
+                                style="text-align:center;">
+
+                                Loading patients...
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <script src="/js/script.js"></script>
+
+
+    <script>
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                if (
+                    typeof loadPatients === "function"
+                ) {
+
+                    loadPatients();
+
+                }
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
